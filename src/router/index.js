@@ -8,6 +8,8 @@ import father from '@/components/props/father'
 import child from '@/components/props/child'
 import other from '@/components/props/other'
 import page from '@/components/mixin/page'
+import sendCode from '@/components/ydui/sendCode'
+
 
 Vue.use(Router);
 
@@ -54,6 +56,10 @@ export default new Router({
     {
       path:'/page',
       component:page
+    },
+    {
+      path:'/sendCode',
+      component:sendCode
     }
   ]
 })
