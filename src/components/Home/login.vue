@@ -1,6 +1,6 @@
 <template>
   <div v-title data-title="用户登录">
-    <div class="form-box">
+    <div class="form-box" ref="form">
         <yd-cell-group>
           <yd-cell-item>
             <p slot="left">用户登录</p>
@@ -99,6 +99,7 @@
     mounted(){
       const winHeight = window.innerHeight;
       this.input1=this.store.get('user');
+      this.$refs.form.style.paddingTop=`${window.innerHeight/2-this.$refs.form.clientHeight/2}px`;
     },
 
     watch: {
@@ -121,9 +122,6 @@
 </script>
 
 <style lang="less" scoped>
-  .form-box {
-    margin-top: 400px;
-  }
 
   form {
     width: 45%;

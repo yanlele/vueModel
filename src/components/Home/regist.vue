@@ -1,6 +1,6 @@
 <template>
   <div v-title data-title="用户注册">
-    <div class="form-box">
+    <div class="form-box" ref="form">
         <yd-cell-group>
           <yd-cell-item>
             <p slot="left" class="title" >用户注册</p>
@@ -115,17 +115,13 @@
     mounted(){
       console.log(window.innerHeight);
       console.log(document.body.scrollHeight);
+
+      this.$refs.form.style.paddingTop=`${window.innerHeight/2-this.$refs.form.clientHeight/2}px`;
     }
   }
 </script>
 
 <style lang="less" scoped>
-  .form-box {
-    padding-top: 400px;
-    height:1800px;
-  }
-
-
   .sure-message {
     height: 60px;
     text-align: center;
