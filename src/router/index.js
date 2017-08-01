@@ -9,6 +9,7 @@ import child from '@/components/props/child'
 import other from '@/components/props/other'
 import page from '@/components/mixin/page'
 import sendCode from '@/components/ydui/sendCode'
+import lottery from '@/components/lottery'
 
 
 Vue.use(Router);
@@ -60,6 +61,12 @@ export default new Router({
     {
       path:'/sendCode',
       component:sendCode
+    },
+
+    /*抽奖*/
+    {
+      path:'/lottery',
+      component:lottery
     }
   ]
 })

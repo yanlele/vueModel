@@ -9,8 +9,8 @@
         <yd-sendcode slot="right"
                      v-model="start1"
                      @click.native="sendCode1"
-                     type="primary"
-        ></yd-sendcode>
+                     type="primary">
+        </yd-sendcode>
         <!-- ↑↑关键代码是这里↑↑ -->
 
       </yd-cell-item>
