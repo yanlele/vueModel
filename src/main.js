@@ -5,10 +5,13 @@ import App from './App'
 import router from './router'
 import vue_store from './store'
 import YDUI from 'vue-ydui'
+
 import 'vue-ydui/dist/ydui.px.css'
 import axios from 'axios'
 
 import '@/base/mock'
+import '@/css/index.css'
+
 
 
 var engine = require('store/src/store-engine');

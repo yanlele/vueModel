@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+
 import Home from '@/components/Home/index'
 import Login from '@/components/Home/login'
 import Regist from '@/components/Home/regist'
@@ -11,6 +12,8 @@ import page from '@/components/mixin/page'
 import sendCode from '@/components/ydui/sendCode'
 import lottery from '@/components/lottery'
 
+import buyHome from '@/components/buyCars/home'
+import register from '@/components/buyCars/register'
 
 Vue.use(Router);
 
@@ -67,6 +70,16 @@ export default new Router({
     {
       path:'/lottery',
       component:lottery
+    },
+
+    /*全名抢车项目*/
+    {
+      path:'/buyHome',
+      component:buyHome
+    },
+    {
+      path:'/register',
+      component:register
     }
   ]
 })
