@@ -1,10 +1,12 @@
 <template>
   <div v-title data-title="FlexBox">
     <div ref="body" class="body" >
-      <yd-flexbox direction="vertical">
-        <div class="header">div</div>
-        <yd-flexbox-item class="body">yd-flexbox-item</yd-flexbox-item>
-        <div class="footer">div</div>
+
+      <yd-flexbox>
+        <yd-flexbox-item class="one">yd-flexbox-item</yd-flexbox-item>
+        <yd-flexbox-item ></yd-flexbox-item>
+        <yd-flexbox-item class="two">yd-flexbox-item</yd-flexbox-item>
+        <yd-flexbox-item ></yd-flexbox-item>
       </yd-flexbox>
     </div>
   </div>
@@ -25,6 +27,15 @@
 </script>
 
 <style scoped long="less">
+
+  .one{
+    background-color: #daaa5e;
+    width:40%;
+  }
+
+  .two{
+    background-color: #979bda;
+  }
 
   .body {
     /*height:1800px;*/

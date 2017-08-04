@@ -15,6 +15,12 @@
 
       </yd-cell-item>
     </yd-cell-group>
+
+    <hr>
+    <yd-cell-item>
+      <span slot="left">用户名：</span>
+      <yd-input slot="right" required v-model="input1" max="6" placeholder="请输入用户名"></yd-input>
+    </yd-cell-item>
   </div>
 </template>
 
