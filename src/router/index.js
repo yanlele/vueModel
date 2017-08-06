@@ -15,8 +15,6 @@ import lottery from '@/components/lottery'
 import buyHome from '@/components/buyCars/home'
 import register from '@/components/buyCars/register'
 
-import test1 from '@/components/test/test1'
-
 Vue.use(Router);
 
 export default new Router({
@@ -50,7 +48,7 @@ export default new Router({
       component:father,
       children:[
         {
-          path:'/child',
+          path:'child',
           component:child
         }
       ]
@@ -63,8 +61,6 @@ export default new Router({
       path:'/page',
       component:page
     },
-
-    /*YDUI test*/
     {
       path:'/sendCode',
       component:sendCode
@@ -84,12 +80,6 @@ export default new Router({
     {
       path:'/register',
       component:register
-    },
-
-    /*测试页面*/
-    {
-      path:'/test1',
-      component:test1
     }
   ]
 })

@@ -2,7 +2,8 @@
   <div>
     <p>我是父组件</p>
     <P>我收到了我的子组件给我的信息了：{{receives}}</P>
-    <child :send="message" @sendForFather="receive"></child>
+    <!--<child :send="message" @sendForFather="receive"></child>-->
+    <router-view :send="message" @sendForFather="receive"></router-view>
 
     <p>我是vuex的信息：{{data}}</p>
   </div>
