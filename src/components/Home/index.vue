@@ -23,7 +23,7 @@
     created(){
       const name = this.$route.query.name;
 
-      this.axios.post('/think2/public/index/index/userMessage', {
+      this.axios.post('/api/yanle.json', {
         name: name
       }).then((res) => {
         if (res.data.success) {

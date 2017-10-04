@@ -1,0 +1,57 @@
+{
+     "interfaceType": "GET",
+     "requiredParameters": [],
+     "responseParameters": [
+          {
+               "id": "01",
+               "kind": "string",
+               "name": "message",
+               "rule": "登录成功",
+               "array": [],
+               "nameVerify": "name_1507124884000",
+               "ruleVerify": "rule_1507124884000"
+          },
+          {
+               "id": "02",
+               "kind": "mock",
+               "name": "success",
+               "rule": "true",
+               "array": [],
+               "nameVerify": "name_1507124898000",
+               "ruleVerify": "rule_1507124898000"
+          },
+          {
+               "id": "03",
+               "kind": "object",
+               "name": "data",
+               "rule": "--",
+               "array": [],
+               "nameVerify": "name_1507124914000",
+               "ruleVerify": "rule_1507124914000"
+          },
+          {
+               "id": "0301",
+               "kind": "string",
+               "name": "name",
+               "rule": "yanle",
+               "array": [],
+               "nameVerify": "name_1507124918000",
+               "ruleVerify": "rule_1507124918000"
+          },
+          {
+               "id": "0302",
+               "kind": "string",
+               "name": "age",
+               "rule": "25",
+               "array": [],
+               "nameVerify": "name_1507124925000",
+               "ruleVerify": "rule_1507124925000"
+          }
+     ],
+     "reqError": [],
+     "docError": [],
+     "interfaceUrl": "/yanle.json",
+     "interfaceName": "测试接口",
+     "lazyLoad": "no",
+     "methodError": "请求类型异常请确认"
+}

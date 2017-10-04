@@ -11,6 +11,7 @@ var express = require('express')
 var webpack = require('webpack')
 var proxyMiddleware = require('http-proxy-middleware')
 var webpackConfig = require('./webpack.dev.conf')
+var mock2easy = require('mock2easynew');
 
 // default port where dev server listens for incoming traffic
 var port = process.env.PORT || config.dev.port
@@ -68,7 +69,7 @@ var uri = 'http://localhost:' + port
 var _resolve
 var readyPromise = new Promise(resolve => {
   _resolve = resolve
-})
+});
 
 console.log('> Starting dev server...')
 devMiddleware.waitUntilValid(() => {
@@ -78,9 +79,27 @@ devMiddleware.waitUntilValid(() => {
     opn(uri)
   }
   _resolve()
-})
+});
 
-var server = app.listen(port)
+var defaultConfig = {
+  port: 8006,
+  lazyLoadTime: 3000,
+  database:'mock2easy',
+  doc:'doc',
+  keepAlive:true,
+  isSpider:false,
+  ignoreField:[],
+  interfaceSuffix: '.json',
+  preferredLanguage:'ch'
+};
+
+mock2easy(defaultConfig, function (app) {
+  app.listen(defaultConfig.port, function () {
+    console.log(('mock2easy is starting , please visit : http://127.0.0.1:' + defaultConfig.port).bold.cyan);
+  });
+});
+
+var server = app.listen(port);
 
 module.exports = {
   ready: readyPromise,

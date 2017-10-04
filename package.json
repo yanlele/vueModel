@@ -40,6 +40,7 @@
     "http-proxy-middleware": "^0.17.3",
     "less": "^2.7.2",
     "less-loader": "^4.0.5",
+    "mock2easynew": "0.0.3",
     "mockjs": "^1.0.1-beta3",
     "opn": "^5.1.0",
     "optimize-css-assets-webpack-plugin": "^2.0.0",
