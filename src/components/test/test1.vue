@@ -1,43 +1,38 @@
 <template>
-  <div>
-    <group>
-      <cell title="cell" value="hello" is-link></cell>
-      <cell-box is-link>
-        cell-box long long long long long long long
-      </cell-box>
-      <cell-box>
-        cell-box hello world hello world hello world
-      </cell-box>
-      <cell title="cell" value="hello" is-link></cell>
-    </group>
+  <div class="content">
+    <input type="button" value="+1" @click="increment">
+    <input type="button" value="-1" @click="decrement">
+    <input type="button" value="奇数+1" @click="addOdd">
+    <input type="button" value="偶数+1" @click="addEven">
+    <input type="button" value="异步请求" @click="setTimeOut">
+    <br>
+    现在的数字为：{{count}}
   </div>
 </template>
-
-<script type="text/ecmascript-6">
-  import { Group, Cell, CellBox } from 'vux'
-
-  export default{
-    data(){
-      return {
-        show: true
-      }
-    },
-
-    components: {
-      Group,
-      Cell,
-      CellBox
-    }
-
+<style scoped="scoped">
+  .content{
+    text-align: center;
+    margin-top: 100px;
+    font-size: 18px;
   }
-</script>
 
-
-<style scoped>
-  .bg {
-    background-color: #1cd9d3;
-    height: 200px;
-    width: 200px;
-    margin: 0 auto;
+  input{
+    padding:10px 20px;
   }
 </style>
+<script>
+  import {mapActions, mapGetters} from 'vuex'
+  export default{
+    name:'test1',
+    methods: mapActions([
+      'increment',
+      'decrement',
+      'addOdd',
+      'addEven',
+      'setTimeOut'
+    ]),
+    computed: mapGetters([
+      'count'
+    ])
+  }
+</script>

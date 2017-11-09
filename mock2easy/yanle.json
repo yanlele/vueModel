@@ -1,5 +1,5 @@
 {
-     "interfaceType": "GET",
+     "interfaceType": "POST",
      "requiredParameters": [],
      "responseParameters": [
           {
@@ -52,6 +52,5 @@
      "docError": [],
      "interfaceUrl": "/yanle.json",
      "interfaceName": "测试接口",
-     "lazyLoad": "no",
-     "methodError": "请求类型异常请确认"
+     "lazyLoad": "no"
 }

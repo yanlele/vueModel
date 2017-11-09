@@ -10,7 +10,6 @@ import child from '@/components/props/child'
 import other from '@/components/props/other'
 import page from '@/components/mixin/page'
 import sendCode from '@/components/ydui/sendCode'
-import infiniteScroll from '@/components/ydui/infiniteScroll'
 import lottery from '@/components/lottery'
 
 import buyHome from '@/components/buyCars/home'
@@ -91,6 +90,7 @@ export default new Router({
     /*测试页面*/
     {
       path:'/test1',
+      name:'test1',
       component:test1
     }
   ]
