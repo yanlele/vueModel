@@ -10,14 +10,18 @@ import child from '@/components/props/child'
 import other from '@/components/props/other'
 import page from '@/components/mixin/page'
 import sendCode from '@/components/ydui/sendCode'
+import infiniteScroll from '@/components/ydui/infiniteScroll'
 import lottery from '@/components/lottery'
 
 import buyHome from '@/components/buyCars/home'
 import register from '@/components/buyCars/register'
 
+import test1 from '@/components/test/test1'
+
 Vue.use(Router);
 
 export default new Router({
+  mode: 'history',
   routes: [
     {
       path:'/',
@@ -48,7 +52,7 @@ export default new Router({
       component:father,
       children:[
         {
-          path:'child',
+          path:'/child',
           component:child
         }
       ]
@@ -61,6 +65,8 @@ export default new Router({
       path:'/page',
       component:page
     },
+
+    /*YDUI test*/
     {
       path:'/sendCode',
       component:sendCode
@@ -80,6 +86,12 @@ export default new Router({
     {
       path:'/register',
       component:register
+    },
+
+    /*测试页面*/
+    {
+      path:'/test1',
+      component:test1
     }
   ]
 })

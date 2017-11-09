@@ -8,9 +8,10 @@ import YDUI from 'vue-ydui'
 
 import 'vue-ydui/dist/ydui.px.css'
 import axios from 'axios'
+import 'animate.css'
 
 import '@/base/mock'
-import '@/css/index.css'
+// import '@/css/index.css'
 
 
 

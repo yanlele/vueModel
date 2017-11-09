@@ -2,19 +2,35 @@
   <div id="lottery">
     <table border="0" cellpadding="0" cellspacing="0">
       <tr>
-        <td class="lottery-unit lottery-unit-0"><img src="./gift0.jpg"><div class="mask"></div></td>
-        <td class="lottery-unit lottery-unit-1"><img src="./gift1.jpg"><div class="mask"></div></td>
-        <td class="lottery-unit lottery-unit-2"><img src="./gift2.jpg"><div class="mask"></div></td>
+        <td class="lottery-unit lottery-unit-0"><img src="./gift0.jpg">
+          <div class="mask"></div>
+        </td>
+        <td class="lottery-unit lottery-unit-1"><img src="./gift1.jpg">
+          <div class="mask"></div>
+        </td>
+        <td class="lottery-unit lottery-unit-2"><img src="./gift2.jpg">
+          <div class="mask"></div>
+        </td>
       </tr>
       <tr>
-        <td class="lottery-unit lottery-unit-7"><img src="./gift7.jpg"><div class="mask"></div></td>
+        <td class="lottery-unit lottery-unit-7"><img src="./gift7.jpg">
+          <div class="mask"></div>
+        </td>
         <td><a href="javascript:" class="sure"></a></td>
-        <td class="lottery-unit lottery-unit-3"><img src="./gift3.jpg"><div class="mask"></div></td>
+        <td class="lottery-unit lottery-unit-3"><img src="./gift3.jpg">
+          <div class="mask"></div>
+        </td>
       </tr>
       <tr>
-        <td class="lottery-unit lottery-unit-6"><img src="./gift6.jpg"><div class="mask"></div></td>
-        <td class="lottery-unit lottery-unit-5"><img src="./gift5.jpg"><div class="mask"></div></td>
-        <td class="lottery-unit lottery-unit-4"><img src="./gift4.jpg"><div class="mask"></div></td>
+        <td class="lottery-unit lottery-unit-6"><img src="./gift6.jpg">
+          <div class="mask"></div>
+        </td>
+        <td class="lottery-unit lottery-unit-5"><img src="./gift5.jpg">
+          <div class="mask"></div>
+        </td>
+        <td class="lottery-unit lottery-unit-4"><img src="./gift4.jpg">
+          <div class="mask"></div>
+        </td>
       </tr>
     </table>
   </div>
@@ -30,7 +46,7 @@
         timer: 0,    //setTimeout的ID，用clearTimeout清除
         speed: 20,    //初始转动速度
         times: 0,    //转动次数
-        cycle: 50,    //转动基本次数：即至少需要转动多少次再进入抽奖环节
+        cycle: 70,    //转动基本次数：即至少需要转动多少次再进入抽奖环节
         prize: -1,    //中奖位置
         init: function (id) {
           if ($("#" + id).find(".lottery-unit").length > 0) {
@@ -63,8 +79,10 @@
       function roll() {
         lottery.times += 1;
         lottery.roll();//转动过程调用的是lottery的roll方法，这里是第一次调用初始化
+
         if (lottery.times > lottery.cycle + 10 && lottery.prize == lottery.index) {
-          clearTimeout(lottery.timer);
+          clearTimeout(lottery.timer-1);
+          alert(lottery.timer);
           lottery.prize = -1;
           lottery.times = 0;
           click = false;
@@ -88,24 +106,19 @@
         }
         return false;
       }
-
       var click = false;
 
-      window.onload = function () {
-        lottery.init('lottery');
-        $("#lottery a").click(function () {
-          if (click) {//click控制一次抽奖过程中不能重复点击抽奖按钮，后面的点击不响应
-            return false;
-          } else {
-            lottery.speed = 100;
-            roll();    //转圈过程不响应click事件，会将click置为false
-            click = true; //一次抽奖完成后，设置click为true，可继续抽奖
-            return false;
-          }
-        });
-      };
-
-
+      lottery.init('lottery');
+      $("#lottery a").click(function () {
+        if (click) {//click控制一次抽奖过程中不能重复点击抽奖按钮，后面的点击不响应
+          return false;
+        } else {
+          lottery.speed = 100;
+          roll();    //转圈过程不响应click事件，会将click置为false
+          click = true; //一次抽奖完成后，设置click为true，可继续抽奖
+          return false;
+        }
+      });
     },
 
 
