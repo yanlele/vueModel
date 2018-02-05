@@ -1,38 +1,76 @@
 <template>
-  <div class="content">
-    <input type="button" value="+1" @click="increment">
-    <input type="button" value="-1" @click="decrement">
-    <input type="button" value="奇数+1" @click="addOdd">
-    <input type="button" value="偶数+1" @click="addEven">
-    <input type="button" value="异步请求" @click="setTimeOut">
-    <br>
-    现在的数字为：{{count}}
+  <div>
+    <p>用户评论测试</p>
+    <hr>
+
+    <div v-for="(item,index) in list">
+      <button
+        @click="getGood(index)"
+        :class="item.car">点赞 {{item.count}}
+      </button>
+      <br><br>
+    </div>
   </div>
 </template>
-<style scoped="scoped">
-  .content{
-    text-align: center;
-    margin-top: 100px;
-    font-size: 18px;
-  }
 
-  input{
-    padding:10px 20px;
-  }
-</style>
 <script>
-  import {mapActions, mapGetters} from 'vuex'
-  export default{
-    name:'test1',
-    methods: mapActions([
-      'increment',
-      'decrement',
-      'addOdd',
-      'addEven',
-      'setTimeOut'
-    ]),
-    computed: mapGetters([
-      'count'
-    ])
+  export default {
+    data() {
+      return {
+        list: [{
+          count: 11
+        }, {
+          count: 12
+        }, {
+          count: 13
+        }, {
+          count: 14
+        }, {
+          count: 15
+        }, {
+          count: 16
+        }, {
+          count: 17
+        }, {
+          count: 18
+        }, {
+          count: 19
+        }]
+      }
+    },
+
+    created() {
+      /*对后端返回的数组扩展*/
+      this.list.forEach((item, index) => {
+        item.check = true;
+        item.car='';
+      })
+    },
+
+    methods: {
+      getGood(index) {
+        /*这样就实现了点击+1，再次点击-1的功能*/
+        console.log(index);
+        console.log(this.list[index].count);
+        if (this.list[index].check) {
+          this.list[index].count++;
+          this.list[index].check = false;
+
+          this.list[index].car='car'
+        } else {
+          this.list[index].count--;
+          this.list[index].check = true;
+
+          this.list[index].car='';
+        }
+      },
+    }
   }
 </script>
+
+
+<style scoped="scoped">
+  .car {
+    background-color: #d9bcc3;
+  }
+</style>
